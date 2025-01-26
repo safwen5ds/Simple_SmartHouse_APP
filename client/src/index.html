@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart House Login</title>
+  <link rel="icon" href="assets/favicon-32x32.png" type="image/x-icon" />
+  
+
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white" data-bs-theme="dark" style="font-family: 'Lexend', sans-serif;">
+  <div class="container d-flex min-vh-100 align-items-center justify-content-center">
+    <div class="row rounded-4 shadow-lg w-100">
+      
+     
+      <div class="col-md-6 p-5 bg-white text-dark">
+        <h1 class="h4 fw-bold mb-3">Smart House Login</h1>
+        <p class="mb-4">Please enter your credentials to access the Smart House Management System.</p>
+        <form id="loginForm" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text bg-white border-success text-success"><i class="bi bi-envelope-fill"></i></span>
+              <input type="email" class="form-control bg-white text-dark border-success" id="email" placeholder="Enter your email" required>
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text bg-white border-success text-success"><i class="bi bi-lock-fill"></i></span>
+              <input type="password" class="form-control bg-white text-dark border-success" id="password" placeholder="Enter your password" required>
+              <button type="button" class="btn btn-light btn-sm" id="togglePassword">
+                <i class="bi bi-eye"></i>
+              </button>
+              <div class="invalid-feedback">
+                Please enter your password.
+              </div>
+            </div>
+          </div>       
+          <button type="submit" class="btn btn-success w-100">Login</button>
+        </form>
+      </div>
+
+      <div class="col-md-6 d-none d-md-flex flex-column justify-content-start align-items-center bg-success rounded-end-4">
+        <div class="mt-5">
+          <h3 class="mb-4 text-white">Welcome to Your Smart Home</h3>
+          <p class="mb-4 text-white">
+            Manage your home's comfort and security effortlessly with our advanced smart home system.
+          </p>
+          <img src="assets/image.png" alt="Smart Home Illustration" class="img-fluid mt-3">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/login.js" defer></script>
+  <script type="module" src="js/main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+          crossorigin="anonymous"></script>
+  
+  <script>
+    (function () {
+      'use strict'
+
+      var form = document.getElementById('loginForm')
+
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })()
+
+    const togglePassword = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
+
+    togglePassword.addEventListener('click', function () {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      this.innerHTML = type === 'password' ? '<i class="bi bi-eye"></i>' : '<i class="bi bi-eye-slash"></i>';
+    });
+  </script>
+</body>
+</html>
