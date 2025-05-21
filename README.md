@@ -22,23 +22,24 @@ A modern web application for managing and controlling smart home devices with a 
 - Vite.js
 - HTML5
 - SCSS
+- Bootstrap
 - JavaScript
 
 ### Backend
 - Node.js
-- Database (MongoDB)
+- Express js
+- MongoDB (cloud)
 
 ## 📋 Prerequisites
 
 - Node.js (v14 or higher)
 - npm or yarn
-- MongoDB
 
 ## 🔧 Installation
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/Simple_SmartHouse_APP.git
+git clone https://github.com/safwen5ds/Simple_SmartHouse_APP.git
 cd Simple_SmartHouse_APP
 ```
 
@@ -93,19 +94,6 @@ Simple_SmartHouse_APP/
 └── README.md
 ```
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## 👥 Authors
 
-- Your Name - Initial work
-
-## 🙏 Acknowledgments
-
-- Thanks to all contributors who have helped shape this project
-- Special thanks to the open-source community for their invaluable tools and libraries
+- Safwen Gharbi
